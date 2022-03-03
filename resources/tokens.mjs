@@ -1,4 +1,4 @@
-const token = {
+export default {
   print: ['consolelog', 'paren'],
   if: ['ifthen', 'paren'],
   then: ['then', 'paren'],

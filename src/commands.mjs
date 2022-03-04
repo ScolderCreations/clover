@@ -9,3 +9,9 @@ export function execBuiltin(func, params) {
     return builtins[func](params);
   }
 }
+
+export function builtinMember(func, member, params) {
+  if (builtins[func] != undefined) {
+    return member.builtins[func](params)
+  }
+}

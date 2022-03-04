@@ -2,7 +2,9 @@
 
 import { token } from "../resources/tokens.mjs"; // get tokens
 
-/** @param string[] str */
+/** 
+ * @param {string} str
+ */
 
 function tokenize(str) {
   var tr = Array();

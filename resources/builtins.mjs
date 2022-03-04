@@ -4,14 +4,12 @@ export function randomInt(floor, ceiling) {
   return _mul + floor;
 }
 
-export function print(any) {
+export function cprint(any) {
   try { console.log(any); } catch {return false}
   return true
 }
 
-export const cloverVersion = '0.0.1';
-
-export const cProcess = function() {
+export function cprocess() {
   var ret = new Object();
   ret.platform = process.platform;
   ret.arch = process.arch;
@@ -19,5 +17,6 @@ export const cProcess = function() {
   ret.data = process.env;
   ret.params = process.execArgv;
   ret.quit = process.quit;
+  ret.version = '0.0.1'; // change with version 
   return ret;
-}()
+}

@@ -5,6 +5,19 @@ export function randomInt(floor, ceiling) {
 }
 
 export function print(any) {
-  var $ = any;
-  console.log($);
+  try { console.log(any); } catch {return false}
+  return true
 }
+
+export const cloverVersion = '0.0.1';
+
+export const cProcess = function() {
+  var ret = new Object();
+  ret.platform = process.platform;
+  ret.arch = process.arch;
+  ret.dir = process.cwd;
+  ret.data = process.env;
+  ret.params = process.execArgv;
+  ret.quit = process.quit;
+  return ret;
+}()

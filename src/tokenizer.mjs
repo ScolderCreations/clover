@@ -6,7 +6,7 @@ import { token } from "../resources/tokens.mjs"; // get tokens
  * @param {string} str
  */
 
-function tokenize(str) {
+export function tokenize(str) {
   var tr = Array();
   var ras = String(); // random access string
   var currentLetter = "",

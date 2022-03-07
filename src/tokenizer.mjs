@@ -37,11 +37,10 @@ export default function tokenize(str, params) {
     if (token.keys.includes(currentText)) {
       ras = currentText;
       currentText = '';
-      if ((str[i + 1] + str [i + 2]).match('^\s?\()?')) { // whitespace? and paren
+      if ((str[i + 1] + str [i + 2]).match(/^\s?\(\)?/)) { // whitespace? and parens
         ram = 1;
-
         while (ram > 0) {
-          i++
+          i++;
           currentLetter = str[i];
           currentText += currentLetter;
           switch (currentLetter) {
@@ -52,12 +51,14 @@ export default function tokenize(str, params) {
               ram--;
               break;
           }
-
+        }
         tkParam = currentText;
       }
       var tk = JSON.parse(
-        `{"token": "${token[currentText][0]}", "params": "${token[currentText][1]}"}`
-      ); // eg {token: consolelog}
+        `{"token": "${token[currentText][0]}"}`
+      ); // eg {token: consolelog, }
+      
+      if (tkParam) tk.params = tkParam;
       tr.push(tk);
     }
   }

@@ -1,9 +1,7 @@
 "use strict";
 
-import * as commands from "./commands.mjs";
+import * as tokentofunc from "./tokentofunc.mjs"
 import tokenizer from "./tokenizer.mjs";
-
-import token from "./tokens.js";
 
 const memory = {};
 

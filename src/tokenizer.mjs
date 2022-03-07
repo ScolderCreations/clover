@@ -6,9 +6,10 @@ import { token } from "../resources/tokens.mjs"; // get tokens
  * @param {string} str
  */
 
-export default function tokenize(str) {
+export default function tokenize(str, params) {
   var tr = Array();
   var ras = String(); // random access string
+  var ram = Number(); // random access number
   var currentLetter = "",
     currentText = "";
   for (let i = 0; i < str.length; i++) {
@@ -34,11 +35,32 @@ export default function tokenize(str) {
       }
     }
     if (token.keys.includes(currentText)) {
+      ras = currentText;
+      currentText = '';
+      if ((str[i + 1] + str [i + 2]).match('^\s?\()?')) { // whitespace? and paren
+        ram = 1;
+
+        while (ram > 0) {
+          i++
+          currentLetter = str[i];
+          currentText += currentLetter;
+          switch (currentLetter) {
+            case '(':
+              ram++;
+              break;
+            case ')':
+              ram--;
+              break;
+          }
+
+        tkParam = currentText;
+      }
       var tk = JSON.parse(
-        `{"token": "${token[currentText][0]}", "type": "${token[currentText][1]}"}`
-      ); // {token: type}
+        `{"token": "${token[currentText][0]}", "params": "${token[currentText][1]}"}`
+      ); // eg {token: consolelog}
       tr.push(tk);
     }
   }
   return tr;
 }
+

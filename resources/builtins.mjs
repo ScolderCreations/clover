@@ -20,3 +20,11 @@ export function cprocess() {
   ret.version = '0.0.1'; // change with version 
   return ret;
 }
+
+export function joinstr() {
+  var $ret = String();
+  for (let $ of arguments) {
+    $ret = $ret + $
+  }
+  return $ret;
+}

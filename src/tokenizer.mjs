@@ -35,7 +35,7 @@ export default function tokenize(str) {
     }
     if (token.keys.includes(currentText)) {
       var tk = JSON.parse(
-        `{${token[currentText][0]}: ${token[currentText][1]}}`
+        `{"token": "${token[currentText][0]}", "type": "${token[currentText][1]}"}`
       ); // {token: type}
       tr.push(tk);
     }

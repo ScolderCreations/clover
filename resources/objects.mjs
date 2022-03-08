@@ -31,3 +31,14 @@ class STRING {
         return ret || 0
     }
 }
+
+class NUMBER {
+    constructor(toNum) {
+        if (toNum.isArray) {
+            this.value = toNum.length;
+        } else if (typeof toNum == 'string') {
+            this.value = Number(toNum);
+        }
+        return this.value
+    }
+}

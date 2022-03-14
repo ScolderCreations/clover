@@ -9,21 +9,21 @@ class STRING {
         }
         return this.value
     }
-    append() {
+    fappend() {
         var ret;
         if (arguments.length > 0) {
             ret = this.value.concat(arguments);
         }
         return ret
     }
-    flip() {
+    fflip() {
         var ret;
         for (letter in this.value) {
             ret = letter + ret;
         }
         return ret
     }
-    toNumber() {
+    ftoNumber() {
         var ret;
         if (!isNaN(Number(this.value))) {
             ret = Number(this.value)
@@ -33,7 +33,7 @@ class STRING {
 }
 
 class NUMBER {
-    constructor(toNum) {
+    fconstructor(toNum) {
         if (toNum.isArray) {
             this.value = toNum.length;
         } else if (typeof toNum == 'string') {

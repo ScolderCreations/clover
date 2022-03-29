@@ -11,3 +11,18 @@ export function execToken(tokenObject) {
       return c.cprocess();
   }
 }
+
+export function midOperator(tokenObject, l, r) {
+  switch(tokenObject['token']) {
+    case '+':
+      return l + r;
+    case '-':
+      return l - r;
+    case '==':
+      return (l == r);
+    case '/':
+      return l / r;
+    case '*':
+      return l * r;
+  }
+}

@@ -9,6 +9,8 @@ export function execToken(tokenObject) {
       return c.randomInt(tokenObject.params);
     case 'process':
       return c.cprocess();
+    case 'openfile':
+      return c.openfile(tokenObject.params);
   }
 }
 

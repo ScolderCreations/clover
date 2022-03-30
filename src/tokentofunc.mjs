@@ -24,5 +24,17 @@ export function midOperator(tokenObject, l, r) {
       return l / r;
     case '*':
       return l * r;
+    case '%':
+      return l % r;
+    case '||':
+      return (l || r);
+    case '!=':
+      return (l != r);
+    case '!|':
+      return (!(l || r));
+    case '&&':
+      return (l && r);
+    case '!&':
+      return (!(l && r));
   }
 }

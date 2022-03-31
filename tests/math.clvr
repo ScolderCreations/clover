@@ -1,3 +1,1 @@
-print(
-    join(1 * 5, "is 1 times 5")
-    );
+print(join(1 * 5, "is 1 times 5"));

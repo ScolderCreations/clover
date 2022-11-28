@@ -1,6 +1,6 @@
 'use strict';
 
-import { token } from "../resources/tokens.mjs"; // get tokens
+import * as token from "../resources/tokens.mjs"; // get tokens
 
 /** 
  * @param {string} str
